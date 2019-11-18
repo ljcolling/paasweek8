@@ -13,6 +13,7 @@ check1<-function(my_plot = my_plot){
 
 
 check2<-function(uni_counts = uni_counts){
+   names(uni_counts)[2] = "N"
    if(identical(ma_snarc %>% group_by(uni) %>% summarise(N = n()),
                 uni_counts)){
       cat("Correct! Answer Code 2: '9iup' \n\n")
@@ -22,6 +23,7 @@ check2<-function(uni_counts = uni_counts){
 }
 
 check3<-function(hand_counts = hand_counts){
+   names(hand_counts)[2] = "N"
    if(identical(ma_snarc %>% group_by(hand) %>% summarise(N = n()),
                 hand_counts)){
       cat("Correct! Answer Code 3: 'pid2' \n\n")
